@@ -1,0 +1,41 @@
+
+h1 Complaints
+table class="table table-hover"
+  thead
+    tr
+      td Date
+      td Email
+      td Info
+      td More
+  tbody
+    -@complaints.each do |complaint|
+      tr
+        td
+          =complaint.date
+        td
+          =complaint.email
+        td
+          =complaint.message_subtype
+        td
+          =link_to "More info", message_path(complaint.id)
+
+
+h1 Complaints
+table class="table table-hover"
+  thead
+    tr
+      td Date
+      td Email
+      td Info
+      td More
+  tbody
+    -@bounces.each do |bounce|
+      tr
+        td
+          =bounce.date
+        td
+          =bounce.email
+        td
+          =bounce.message_subtype
+        td
+          =link_to "More info", message_path(bounce.id)
