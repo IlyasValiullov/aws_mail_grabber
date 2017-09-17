@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   resources :message, only: [:index, :show]
   require "sidekiq/web"
   mount Sidekiq::Web => '/sidekiq'
+
+  post "update", to: "message#grab"
 end
